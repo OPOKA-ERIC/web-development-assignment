@@ -1,0 +1,67 @@
+<html>
+<head>
+<link rel="stylesheet" href="image carousel 2.css" type="text/css"/>
+<title>About us</title>
+    <style>
+        table {
+            width: 60%;
+            margin: 20px auto; /* Centers the table */
+            border-collapse: separate;
+            border-spacing: 15px; /* Adds space between columns */
+            background-color: white; /* Background for contrast */
+            color: black; /* Makes text white */
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        th, td {
+            padding: 12px; /* Space inside cells */
+            border: 1px solid white; /* Visible white border */
+        }
+
+        th {
+            background-color: gray; /* Header background */
+        }
+    </style>
+</head>
+<h1 style ="color:black"> HISTORY OF THE SCHOOL </h1>
+<p><strong>London College Nansana</strong> was founded in under the proprietorship of and since then has been in existence as one of the top schools in the country </p>
+<h2 style ="color:black"> OUR MISSION </h2>
+<p>To promote young men and women progress through learning, loving and serving thus molding students to become ethical, principled and responsible leaders</p>
+<h3 style ="color:black">OUR VISION</h3>
+<p>Education geared at promoting integrated personal development. Each Student is challenged to work towards realizing his/her potential through developing intellectual, physical, emotional, and spiritual attributes resulting in becoming a better person, transformed and prosperous</p>
+<h4 style="color:black">OUR CORE VALUES</h4>
+<p>To provide high standard education enriched with Christian values to develop more responsible citizens</p>
+<p>To impress on students the culture of taking initiative</p>
+<p>To help students realize and develop their talents in full</p>
+<p>To inspire the students into the spirit of service for others.</p>
+<body>
+<table class="table table-striped>
+<tr class="big-info">
+<th>SECTION</th>
+<th>CLASS</th>
+<th>BLOCK</th>
+</tr>
+<tbody id ="myTable"></tbody>
+</table>
+<script>
+var myArray=[
+{'SECTION':'BOARDING','CLASS':'FORM 1 TO FORM 4','BLOCK':'A'},
+{'SECTION':'BOARDING','CLASS':'FORM 5 TO FORM 6','BLOCK':'B'}
+];
+buildTable(myArray)
+function buildTable(data){
+        var table=document.getElementById('myTable');
+		for(var i=0; i < data.length; i++){
+		var row = `<tr>
+		          <td>${data[i].SECTION}</td>
+				  <td>${data[i].CLASS}</td>
+				  <td>${data[i].BLOCK}</td>
+				  </tr>`;
+	table.innerHTML += row ;
+	}
+	}
+	</script>
+	</body>
+	</html>

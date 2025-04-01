@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title>Contact us </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+			background-image:url("shit 3.jpg");	
+			background-size: cover;  
+            background-position: center;
+        }
+		 .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 300px;
+        }
+        .contact-form h2 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .contact-form input, .contact-form textarea, .contact-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background: #0056b3;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form class="contact-form" onsubmit="return validateForm()">
+        <h2>Contact Us</h2>
+        <input type="text" id="name" name="name" placeholder="Your Name">
+        <span id="nameError" class="error"></span>
+        <input type="email" id="email" name="email" placeholder="Your Email">
+        <span id="emailError" class="error"></span>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+        <span id="phoneError" class="error"></span>
+        <textarea id="message" name="message" rows="4" placeholder="Your Message"></textarea>
+        <span id="messageError" class="error"></span>
+        <button type="submit">Send Message</button>
+    </form>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.729519925312!2d32.52679607403748!3d0.38226926392367855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177daff90ebe279d%3A0xc9c4e5f134d2d27d!2sLondon%20College%20Nansana!5e0!3m2!1sen!2sug!4v1743322695928!5m2!1sen!2sug" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
+    
+    <script>
+        function validateForm() {
+            let isValid = true;
+            document.getElementById("nameError").innerText = "";
+            document.getElementById("emailError").innerText = "";
+            document.getElementById("phoneError").innerText = "";
+            document.getElementById("messageError").innerText = "";
+            
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let message = document.getElementById("message").value.trim();
+            
+            if (name === "") {
+                document.getElementById("nameError").innerText = "Name is required";
+                isValid = false;
+            }
+            
+            if (email === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                document.getElementById("emailError").innerText = "Valid email is required";
+                isValid = false;
+            }
+            
+            if (phone === "" || !/^\d{10}$/.test(phone)) {
+                document.getElementById("phoneError").innerText = "Valid 10-digit phone number required";
+                isValid = false;
+            }
+            
+            if (message === "") {
+                document.getElementById("messageError").innerText = "Message cannot be empty";
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+    </script>
+
+</body>
+</html>

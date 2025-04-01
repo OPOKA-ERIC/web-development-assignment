@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+	background-image:url("shit 3.jpg");
+	background-size: cover;  
+    background-position: center;
+    background-color: white;
+    color: black;
+    transition: background 0.3s, color 0.3s;
+}
+}
+p{
+font-size:24px;
+font-style:Times new Romans;
+font-style:bold;
+font-style:italic;
+text-align:center;
+color:black;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: green;
+    overflow: hidden;
+}
+
+nav ul li {
+    display: inline;
+    padding: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: black;
+}
+
+/* ✅ Carousel Container */
+#carousel-container {
+    position: relative;
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ✅ Styling for Images */
+.carousel {
+    display:flex;
+    transition:transform 0.5s ease-in-out;
+    width:300%;
+	overflow:hidden;
+	position:relative;
+}
+.carousel img{
+    width:100%;
+    flex shrink: 0;
+	position:relative;
+	
+}  
+.carousel item{
+	position:relative;
+	width:300%;
+	height:auto;
+	display:block;
+	text-align:center;
+}
+.carousel-text {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 5px;
+}  
+
+/* ✅ Navigation Buttons */
+.prevBtn, .nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.prevBtn { left: 10px; }
+.nextBtn { right: 10px; }
+
+.prevBtn:hover, .nextBtn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* Light Mode (Default) */
+
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Toggle Button Styling */
+#darkModeToggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#darkModeToggle:hover {
+    background-color: #555;
+}
+/* Light Mode (Default) */
+body {
+    background-color: white;
+    color: black;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+/* Testimonial Section */
+.testimonial-container {
+    width: 60%;
+    margin: 30px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+    transition: background 0.3s;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Dark Mode Support */
+body.dark-mode .testimonial-container {
+    background: #333;
+    color: white;
+}
+
+/* Testimonial Slides */
+.testimonial-carousel {
+    position: relative;
+    height: 150px;
+}
+
+.testimonial-slide {
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.testimonial-slide.active {
+    opacity: 1;
+	position:relative;
+}
+
+

@@ -1,0 +1,81 @@
+<html>
+<head>
+    <link rel="stylesheet" href="academics.css" type="text/css"/>
+    <title>Academics</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            background-color: white;
+			margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button class="toggle-btn" onclick="toggleSection()">Courses offered</button>
+        <div class="content" id="expandableContent">
+            <h2><strong>ADVANCED LEVEL ARTS</strong></h2>
+            <p>HEL/ICT</p>
+            <p>HLD/ICT</p>
+            <p>HDG/MTC</p>
+            <p>HEG/ICT</p>
+
+            <h3><strong>ADVANCED LEVEL SCIENCES</strong></h3>
+            <p>BCM/ICT</p>
+            <p>PCB/MTC</p>
+            <p>PCM/ICT</p>
+            <p>PEM/ICT</p>
+        </div>
+    </div>
+
+    <div class="teacher-table">
+        <h2>Teachers and Subjects</h2>
+        <table border="1" id="teachersTable">
+            <thead>
+                <tr>
+                    <th>Teacher Name</th>
+                    <th>Subject</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="academics.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const teachers = [
+                { name: "Mr. Martin Agaba", subject: "Mathematics" },
+                { name: "Mr. Ojok Andrew", subject: "Physics" },
+                { name: "Mr Charles Mukasa", subject: "Chemistry" },
+                { name: "Mrs. Brown Mugabi", subject: "English" },
+				{ name:"Mr. Mutyaba Anthony", subject: "History"},
+				{ name: "Mr.Okello Mike", subject: "Divinity"},
+				{ name: "Mrs. Namutebi Shiham", subject: "I.R.E"},
+				{ name: "Mrs. Namukasa Sharon", subject: "Economics"}
+            ];
+            
+            const tableBody = document.querySelector("#teachersTable tbody");
+            teachers.forEach(teacher => {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td>${teacher.name}</td><td>${teacher.subject}</td>`;
+                tableBody.appendChild(row);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

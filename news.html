@@ -1,0 +1,116 @@
+
+
+<html>
+<head>
+    <title>Interactive Calendar</title>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+	
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+			background-image:url("shit 3.jpg");
+	        background-size: cover;  
+            background-position: center;
+			background-color:white;
+        }
+        #calendar-container {
+            width: 100%;
+            max-width: 600px;
+			background-color:white;
+		
+        }
+        #calendar {
+            max-width: 100%;
+            height: 400px;
+			
+        }
+        #eventForm, #newsForm {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 300px;
+        }
+        input, button, textarea {
+            padding: 8px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+     <h1>UPCOMING EVENTS</h1>
+	 <p>Shool V.d is on the 31st April, we request all the parents to turn up in person</p>
+	 <p>Sports day is on the 15th April at the school's sports ground</p>
+	 <p>Prefects handover ceremony is on the 10th April at the school's main hall</p>
+    <h2>School Calendar</h2>
+    <form id="eventForm">
+        <input type="text" id="eventTitle" placeholder="Event Title" required>
+        <input type="date" id="eventDate" required>
+        <button type="submit">Add Event</button>
+    </form>
+    
+    <div id="calendar-container">
+        <div id="calendar"></div>
+    </div>
+    
+    <h3>Submit News/Event</h3>
+    <form id="newsForm">
+        <input type="text" id="newsTitle" placeholder="News/Event Title" required>
+        <textarea id="newsContent" placeholder="Details..." rows="4" required></textarea>
+        <button type="submit">Submit News</button>
+    </form>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var calendarEl = document.getElementById("calendar");
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: "dayGridMonth",
+                headerToolbar: {
+                    left: "prev,next today",
+                    center: "title",
+                    right: "dayGridMonth,timeGridWeek,timeGridDay"
+                },
+                height: 400,
+                events: [
+                    { title: "Meeting", start: "2025-04-05" },
+                    { title: "Conference", start: "2025-04-10" },
+                ],
+                dateClick: function (info) {
+                    let title = prompt("Enter event title:");
+                    if (title) {
+                        calendar.addEvent({ title: title, start: info.dateStr });
+                    }
+                }
+            });
+            calendar.render();
+
+            document.getElementById("eventForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+                let title = document.getElementById("eventTitle").value;
+                let date = document.getElementById("eventDate").value;
+                if (title && date) {
+                    calendar.addEvent({ title: title, start: date });
+                    document.getElementById("eventForm").reset();
+                }
+            });
+            
+            document.getElementById("newsForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+                let newsTitle = document.getElementById("newsTitle").value;
+                let newsContent = document.getElementById("newsContent").value;
+                alert("News Submitted: " + newsTitle + "\n" + newsContent);
+                document.getElementById("newsForm").reset();
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
