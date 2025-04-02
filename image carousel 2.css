@@ -1,14 +1,16 @@
 body {
+	
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
-	background-image:url("shit 3.jpg");
+	background-image:url("shit 4.jpg");
 	background-size: cover;  
     background-position: center;
     background-color: white;
-    color: black;
+    color: white;
     transition: background 0.3s, color 0.3s;
+	width:100%;
 }
 }
 p{
@@ -17,7 +19,7 @@ font-style:Times new Romans;
 font-style:bold;
 font-style:italic;
 text-align:center;
-color:black;
+color:white;
 }
 
 /* Navigation Styles */
@@ -44,51 +46,18 @@ nav ul li a:hover {
     background-color: black;
 }
 
-/* ✅ Carousel Container */
-#carousel-container {
-    position: relative;
-    width: 60%;
+.carousel-container {
+    width: 60%;  /* Adjust width as needed */
     margin: auto;
+    position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* ✅ Styling for Images */
-.carousel {
-    display:flex;
-    transition:transform 0.5s ease-in-out;
-    width:300%;
-	overflow:hidden;
-	position:relative;
+.carousel img {
+    width: 100%;  /* Make images fit within the carousel */
+    height: 250px; /* Adjust height for smaller size */
+    object-fit: cover; /* Ensure images look good */
 }
-.carousel img{
-    width:100%;
-    flex shrink: 0;
-	position:relative;
-	
-}  
-.carousel item{
-	position:relative;
-	width:300%;
-	height:auto;
-	display:block;
-	text-align:center;
-}
-.carousel-text {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 15px;
-    border-radius: 5px;
-}  
-
 /* ✅ Navigation Buttons */
 .prevBtn, .nextBtn {
     position: absolute;
@@ -181,7 +150,7 @@ body.dark-mode .testimonial-container {
     width: 100%;
     position: absolute;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .testimonial-slide.active {

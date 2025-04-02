@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Activity Texts Array
     const activities = [
-        "Science Fair - Exploring Innovations",
-        "Sports Day - Champions in Action",
-        "Drama Club - Bringing Stories to Life"
+        "Welcome to London College Nansana",
+        "Striving for Academic Excellence",
+        "Join Us for a Brighter Future"
     ];
 
     // Function to show the slide and update the activity text
